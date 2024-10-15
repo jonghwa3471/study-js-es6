@@ -1,3 +1,5 @@
+// this
+
 const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
@@ -29,6 +31,8 @@ const fire = names.map(addFire);
 
 console.log(fire);
 
+// array methods
+
 const emails = [
   "nco@no.com",
   "naver@google.com",
@@ -55,3 +59,17 @@ console.log(noGmail);
 console.log(cleaned);
 console.log(cleandUseMap);
 console.log(objectEmail);
+
+// default value
+
+/* function sayHi(aName) {
+  return "Hello " + (aName || "anon");
+} */
+
+function sayHi(aName = "anon") {
+  return "Hello " + aName;
+}
+
+const arrowHi = (aName = "anon") => "Hello " + aName;
+
+console.log(sayHi());
