@@ -68,3 +68,12 @@ title.innerText = "styled component cloned";
 subtitle.innerText = "siiiiiiiiiiiiiii";
 
 document.body.append(title, subtitle);
+
+// More String Improvement!
+
+/* 
+1. .includes()
+2. .repeat()
+3. .startsWith()
+4. .endsWith()
+*/
