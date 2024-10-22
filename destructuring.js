@@ -70,3 +70,12 @@ const settings3 = {
     alert2,
   },
 };
+
+// Swapping and Skipping
+let monday = "Sat";
+let saturday = "Mon";
+
+[, monday] = [monday, saturday];
+// ,로 array에서 특정 값을 omitting(생략)할 수 있다.
+
+console.log(monday, saturday);
