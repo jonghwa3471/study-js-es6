@@ -21,3 +21,11 @@ const { notifications, notifications: { follow = false } = {} } = settings;
 console.log(follow);
 console.log(notifications);
 console.log(settings);
+
+// Array Destructuring
+
+const days = () => ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+const [mon, tue, wed] = days();
+
+console.log(mon, tue, wed);
