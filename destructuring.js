@@ -1,5 +1,4 @@
 // Object Destructuring
-
 const settings = {
   color: {
     theme: "dark",
@@ -17,15 +16,27 @@ const settings = {
 
 const { notifications, notifications: { follow = false } = {} } = settings;
 // notifications가 존재하지 않을 시 default로 {}를 주었다.
-//
+
 console.log(follow);
 console.log(notifications);
 console.log(settings);
 
 // Array Destructuring
-
 const days = () => ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 const [mon, tue, wed] = days();
 
 console.log(mon, tue, wed);
+
+// Rename
+const settings2 = {
+  color: {
+    chosen_color: "dark",
+  },
+};
+
+let chosenColor = "blue";
+
+({
+  color: { chosen_color: chosenColor = "light" },
+} = settings2);
