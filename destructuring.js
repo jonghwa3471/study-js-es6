@@ -58,3 +58,15 @@ saveSettings({
     theme: "green",
   },
 });
+
+// Value Shorthands
+
+const follow2 = checkFollow();
+const alert2 = checkAlert();
+
+const settings3 = {
+  notifications: {
+    follow2,
+    alert2,
+  },
+};
