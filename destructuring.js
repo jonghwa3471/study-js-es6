@@ -40,3 +40,21 @@ let chosenColor = "blue";
 ({
   color: { chosen_color: chosenColor = "light" },
 } = settings2);
+
+// Function Destructuting
+// function saveSettings(followAlert, unfollowAlert, mrkAlert, themeColor) {}
+
+function saveSettings({ notifications, color: { theme } }) {
+  console.log(notifications, theme);
+}
+
+saveSettings({
+  notifications: {
+    follow: true,
+    alert: true,
+    mkt: false,
+  },
+  color: {
+    theme: "green",
+  },
+});
