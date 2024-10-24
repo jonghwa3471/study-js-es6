@@ -26,3 +26,25 @@ const bestFriendMaker = (firstOne, ...rest) => {
 };
 
 bestFriendMaker("nico", "lynn", "dall", "japan guy");
+
+// Rest + Spread + Destructure Magic
+const user2 = {
+  name: "nico",
+  age: 24,
+  password: 12345,
+};
+
+const killPassword = ({ password, ...rest }) => rest;
+
+const cleanUser = killPassword(user2);
+
+console.log(cleanUser);
+
+// Set Default
+const setCountry = ({ country = "KR", ...rest }) => ({ country, ...rest });
+
+console.log(setCountry(user2));
+
+// Rename
+const rename = ({ name: NAME, ...rest }) => ({ NAME, ...rest });
+console.log(rename(user2));
