@@ -6,3 +6,14 @@ console.log(friends);
 console.log(...friends);
 console.log([...friends, ...family]);
 console.log(friends.concat(family));
+
+// Spread Applications
+const lastName = prompt("last name");
+
+const user = {
+  username: "nico",
+  age: 24,
+  ...(lastName !== "" && { lastName }),
+};
+
+console.log(user);
