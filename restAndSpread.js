@@ -17,3 +17,12 @@ const user = {
 };
 
 console.log(user);
+
+// Rest Parameters
+const bestFriendMaker = (firstOne, ...rest) => {
+  console.log(`My best friend is ${firstOne}`);
+  console.log(`the rest are ${rest}`);
+  console.log(rest);
+};
+
+bestFriendMaker("nico", "lynn", "dall", "japan guy");
