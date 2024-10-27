@@ -38,9 +38,15 @@ const getMoviesPromise = () => {
 // async/await, try/catch
 const getMoviesAsync = async () => {
   try {
-    const response = await fetch("https://yts.mx/api/v2/list_movies.json");
-    const json = await response.json();
-    console.log(json);
+    const [moviesResponse, suggestionsResponse] = await Promise.all([
+      fetch("https://yts.mx/api/v2/list_movies.json"),
+      fetch("https://yts.mx/api/v2/movie_suggestions.json?movie_id=100"),
+    ]);
+    const [movies, suggestions] = await Promise.all([
+      moviesResponse.json(),
+      suggestionsResponse.json(),
+    ]);
+    console.log(movies, suggestions);
   } catch (error) {
     console.log(`Error: ${error}`);
   } finally {
