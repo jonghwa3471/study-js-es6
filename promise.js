@@ -35,10 +35,17 @@ const getMoviesPromise = () => {
     .catch((error) => console.log(`Error: ${error}`));
 };
 
+// async/await, try/catch
 const getMoviesAsync = async () => {
-  const response = await fetch("https://yts.mx/api/v2/list_movies.json");
-  const json = await response.json();
-  console.log(json);
+  try {
+    const response = await fetch("https://yts.mx/api/v2/list_movies.json");
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.log(`Error: ${error}`);
+  } finally {
+    console.log("we are done!");
+  }
 };
 
 getMoviesAsync();
