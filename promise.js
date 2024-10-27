@@ -23,3 +23,12 @@ const p1 = new Promise((resolve) => {
 })
   .then((value) => console.log(value))
   .finally(() => console.log("I'm done"));
+
+// Real world Promises
+fetch("https://yts.mx/api/v2/list_movies.json")
+  .then((response) => {
+    console.log(response);
+    return response.json();
+  })
+  .then((json) => console.log(json))
+  .catch((error) => console.log(`Error: ${error}`));
