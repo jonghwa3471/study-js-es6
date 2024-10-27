@@ -1,9 +1,17 @@
 const amISexy = new Promise((resolve, reject) => {
-  reject("Yes you are!");
+  resolve(2);
 });
 
-console.log(amISexy);
+const timesTwo = (number) => number * 2;
 
 amISexy
-  .then((result) => console.log(result))
+  .then((number) => timesTwo(number))
+  .then((number) => timesTwo(number))
+  .then((number) => timesTwo(number))
+  .then((number) => timesTwo(number))
+  .then((number) => timesTwo(number))
+  .then(() => {
+    throw Error("Something is wrong");
+  })
+  .then((lastNumber) => console.log(lastNumber))
   .catch((error) => console.log(error));
