@@ -19,16 +19,16 @@ amISexy
 
 // Promise.all
 const p1 = new Promise((resolve) => {
-  setTimeout(resolve, 5000, "first");
+  setTimeout(resolve, 10000, "first");
 });
 const p2 = new Promise((resolve, reject) => {
-  setTimeout(reject, 1000, "second");
+  setTimeout(resolve, 3000, "second");
 });
 const p3 = new Promise((resolve) => {
   setTimeout(resolve, 3000, "third");
 });
 
-const motherPromise = Promise.all([p1, p2, p3]);
+const motherPromise = Promise.race([p1, p2, p3]); // Promise.race
 motherPromise
   .then((values) => console.log(values))
   .catch((err) => console.log(err));
