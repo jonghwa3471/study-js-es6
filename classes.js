@@ -1,37 +1,30 @@
-class User {
-  constructor(name, lastname, email, password) {
-    this.username = name;
-    this.lastname = lastname;
-    this.email = email;
-    this.password = password;
+class Counter {
+  constructor({ initialNumber = 0, counterId, plusId, minusId }) {
+    this.count = initialNumber;
+    this.counter = document.getElementById(counterId);
+    this.plusBtn = document.getElementById(plusId);
+    this.minusBtn = document.getElementById(minusId);
+    this.addEventListener();
   }
-  sayHello = () => {
-    console.log(`Hi, I'm ${this.username}`);
-  };
-  getProfile = () => {
-    console.log(`${this.username} ${this.email} ${this.password}`);
-  };
-  updatePassword = (newPassword, currentPassword) => {
-    if (currentPassword === this.password) {
-      this.password = newPassword;
-    } else {
-      console.log("You've got wrong password");
-    }
-  };
-}
-
-const sexyUser = new User("Nicolas", "Serrano", "nico@com", "1234");
-
-class Admin extends User {
-  constructor(superAdmin) {
-    this.superAdmin = superAdmin;
+  addEventListener() {
+    this.plusBtn.addEventListener("click", this.increase);
+    this.minusBtn.addEventListener("click", this.decrease);
   }
-  deleteWebsite() {
-    console.log("Deleting the whole website...");
+  increase() {
+    this.count += 1;
+    this.repaintCount();
+  }
+  decrease() {
+    this.count += -1;
+    this.repaintCount();
+  }
+  repaintCount() {
+    this.counter.innerText = this.count;
   }
 }
 
-const sexyAdmin = new Admin("Nicolas", "Serrano", "nico@com", "1234", true);
-
-sexyAdmin.deleteWebsite();
-console.log(sexyAdmin.email);
+new Counter({
+  counterId: "count",
+  plusId: "add",
+  minusId: "minus",
+});
