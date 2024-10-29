@@ -16,3 +16,10 @@ weakSet.add(sexy);
 console.log(weakSet);
 weakSet.add({ hello: true });
 console.log(weakSet);
+
+// Map and WeakMap
+const map = new Map();
+
+map.set("age", 18);
+
+console.log(map);
