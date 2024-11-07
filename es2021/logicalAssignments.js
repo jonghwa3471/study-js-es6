@@ -22,3 +22,15 @@ const user = {
 user.password &&= "[secret]";
 
 console.log(user);
+
+// NULLISH Operator
+
+const user2 = {
+  username: "nico",
+  password: 1234,
+  isAdmin: false,
+};
+
+user2.isAdmin ??= true;
+
+console.log(user2);
