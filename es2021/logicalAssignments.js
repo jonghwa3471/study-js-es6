@@ -34,3 +34,6 @@ const user2 = {
 user2.isAdmin ??= true;
 
 console.log(user2);
+
+// Numeric Separators
+console.log(100_000_000_000);
